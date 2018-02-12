@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <groupId>org.jigsaw.payment</groupId>
+    <version>1.0.0</version> 
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>jigsaw-protoc-plugin</artifactId>
+    <packaging>maven-plugin</packaging>
+    <name>Jigsaw Protoc Maven Plugin </name>
+
+  <dependencies>
+	
+	<dependency>
+	  <groupId>org.apache.maven</groupId>
+	  <artifactId>maven-plugin-api</artifactId>
+	  <version>2.0.9</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.apache.maven</groupId>
+	  <artifactId>maven-project</artifactId>
+	  <version>2.0.9</version>
+	</dependency>
+   <dependency>
+      <groupId>org.apache.maven.plugin-tools</groupId>
+      <artifactId>maven-plugin-annotations</artifactId>
+      <version>3.5</version>
+      <scope>provided</scope>
+    </dependency>
+	<dependency>
+	  <groupId>commons-io</groupId>
+	  <artifactId>commons-io</artifactId>
+	  <version>2.2</version>
+	</dependency>
+
+    <!-- test -->
+	<dependency>
+	  <groupId>junit</groupId>
+	  <artifactId>junit</artifactId>
+	  <version>4.12</version>
+	  <scope>test</scope>
+	</dependency>
+  </dependencies>
+
+  <build>
+	<plugins>
+	 <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-plugin</artifactId>
+        <version>3.5</version>
+          <configuration>
+              <url>http://www.bar.com/query</url>
+              <timeout>15</timeout>
+              <options>
+                <option>four</option>
+                <option>five</option>
+                <option>six</option>
+              </options>
+            </configuration>            
+        <executions>
+          <execution>
+            <id>execute</id>
+            <phase>generate-sources</phase>          
+           <goals>
+              <goal>run</goal>
+            </goals>            
+          </execution>
+          <execution>
+            <id>help-goal</id>
+            <goals>
+              <goal>helpmojo</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>		
+	</plugins>
+  </build>
+
+</project>
